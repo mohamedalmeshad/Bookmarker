@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+
+    <!-- icon -->
+    <link rel="icon" href="images/bookmark_icon.png">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <!-- fontawesome styling -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- bootstrap styling -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- main styling -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- media styling -->
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+
+    <main class="bg-beige position-relative">
+        
+        <div class="container py-5 d-flex flex-column justify-content-center align-items-center">
+            <!-- title -->
+            <h1 class="py-2 position-relative">Bookmarker</h1>
+            <!----------->
+
+            <!-- Bookmark form -->
+            <div class="bookmark-form w-100 my-5 p-3 py-4 d-flex gap-4 flex-column justify-content-center align-items-center">
+              <h2>
+                <i class="fa-solid fa-bookmark"></i>
+                  Bookmark your favorite sites 
+                <i class="fa-solid fa-bookmark"></i>
+              </h2>
+              <div class="w-100">
+                <label for="siteName" class="form-label">
+                  <i class="fa-solid fa-book-bookmark pe-2"></i>
+                  Site Name
+                </label>
+                <input type="text" class="form-control" id="siteName" placeholder="Bookmark Name" oninput="changeNameShadow()">
+              </div>
+              <div class="w-100">
+                <label for="siteUrl" class="form-label">
+                  <i class="fa-solid fa-link pe-2"></i>
+                  Site URL
+                </label>
+                <input type="text" class="form-control" id="siteUrl" placeholder="Website URL" oninput="changeUrlShadow()">
+              </div>
+              <div>
+                <button class="btn btn-submit px-5" onclick="addBookmark()">Submit</button>
+              </div>
+            </div>
+            <!-- End bookmark form -->
+
+            <!-- Bookmark table -->
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th scope="col">index</th>
+                  <th scope="col">Website Name</th>
+                  <th scope="col">Visit</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody id="row">
+                <!-- Rows will be inserted here dynamically -->
+              </tbody>
+            </table>
+            <!-- End bookmark table -->
+        </div>
+        
+
+        <!-- Validation box -->
+        <div class="box position-absolute top-0 start-0 bottom-0 end-0 d-flex justify-content-center align-items-center d-none" id="validationBox">
+          <div class="box-content shadow-lg bg-white p-4 rounded-2">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="circles d-flex">
+                <span class="circle1 rounded-circle me-2"></span>
+                <span class="circle2 rounded-circle me-2"></span>
+                <span class="circle3 rounded-circle me-2"></span>
+              </div>
+              <button class="btn border-0" onclick="closeValidationBox()">
+                <i class="fa-solid fa-xmark close fs-3"></i>
+              </button>
+            </div>
+            <p>Site Name or Url is not valid, Please follow the rules below :</p>
+            <div class="rules">
+              <div class="mb-2">
+                <i class="fa-regular fa-circle-right p-2 me-2"></i>
+                Site name must contain at least 3 characters
+              </div>
+              <div>
+                <i class="fa-regular fa-circle-right p-2 me-2"></i>
+                Site URL must be a valid one
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End validation box -->
+    </main>
+
+
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- main js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
