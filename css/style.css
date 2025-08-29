@@ -83,7 +83,7 @@ main h1:hover::after {
 
 .bookmark-form h2 {
   font-family: "Righteous", sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 30px;
   background-image: linear-gradient(to right, #3ca55c, #b5ac49);
