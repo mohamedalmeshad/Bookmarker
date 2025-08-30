@@ -82,7 +82,7 @@ function clear() {
 
 // Validation
 function isValidName(name) {
-  var nameRegex = /^[A-Za-z]{3,}$/;
+  var nameRegex = /^[A-Za-z]{3,}[\s\w]{0,}?$/;
   return nameRegex.test(name);
 }
 
